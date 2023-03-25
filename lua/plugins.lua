@@ -15,13 +15,16 @@ return require('packer').startup(function(use)
 	use 'Mofiqul/vscode.nvim'
 
 	-- Treesitter
-	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })	
+	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
 	-- Undotree
 	use 'mbbill/undotree'
 
     -- Auto Pairs
     use 'jiangmiao/auto-pairs'
+
+    -- Statusline
+    use 'beauwilliams/statusline.lua'
 
 	-- LSP Zero
 	use {
@@ -46,4 +49,11 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'}, -- Optional
 		}
 	}
+
+    -- Touble
+    use {
+        "folke/trouble.nvim",
+        requires = "nvim-tree/nvim-web-devicons",
+    }
+
 end)
