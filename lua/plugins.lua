@@ -20,6 +20,9 @@ return require('packer').startup(function(use)
 	-- Undotree
 	use 'mbbill/undotree'
 
+    -- Auto Pairs
+    use 'jiangmiao/auto-pairs'
+
 	-- LSP Zero
 	use {
 		'VonHeikemen/lsp-zero.nvim',
