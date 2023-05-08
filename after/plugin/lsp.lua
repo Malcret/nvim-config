@@ -12,6 +12,7 @@ lsp.ensure_installed({
 	'bashls',
 	'rust_analyzer',
 	'asm_lsp',
+    'clangd',
 })
 
 local cmp = require('cmp')
