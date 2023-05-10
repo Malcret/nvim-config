@@ -51,9 +51,6 @@ return require('packer').startup(function(use)
     -- Auto Pairs
     use 'jiangmiao/auto-pairs'
 
-    -- Statusline
-    --use 'beauwilliams/statusline.lua'
-
     -- Lualine
     use {
         'nvim-lualine/lualine.nvim',
@@ -112,7 +109,7 @@ return require('packer').startup(function(use)
         requires = "nvim-tree/nvim-web-devicons",
     }
 
-    -- Tabnine
-    use('codota/tabnine-nvim', { run = './dl_binaries.sh' })
+    -- Codeium
+    use 'Exafunction/codeium.vim'
 
 end)
