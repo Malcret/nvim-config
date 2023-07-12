@@ -102,6 +102,12 @@ return require('packer').startup(function(use)
             "mfussenegger/nvim-dap",
         }
     }
+    use {
+        "rcarriga/nvim-dap-ui",
+        requires = {
+            "mfussenegger/nvim-dap",
+        }
+    }
 
     -- Touble
     use {
@@ -111,5 +117,13 @@ return require('packer').startup(function(use)
 
     -- Codeium
     use 'Exafunction/codeium.vim'
+
+    -- Dashboard
+    use {
+        'glepnir/dashboard-nvim',
+        requires = {
+            'nvim-tree/nvim-web-devicons',
+        }
+    }
 
 end)
