@@ -9,21 +9,21 @@ return require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim', tag = '0.1.1',
 		-- or                          , branch = '0.1.x',
 		requires = {
-            'nvim-lua/plenary.nvim'
-        }
+			'nvim-lua/plenary.nvim'
+		}
 	}
 
-    -- Telescope file browser
-    use {
-        "nvim-telescope/telescope-file-browser.nvim",
-        requires = {
-            "nvim-telescope/telescope.nvim",
-            "nvim-lua/plenary.nvim"
-        }
-    }
+	-- Telescope file browser
+	use {
+		"nvim-telescope/telescope-file-browser.nvim",
+		requires = {
+			"nvim-telescope/telescope.nvim",
+			"nvim-lua/plenary.nvim"
+		}
+	}
 
-    -- Which Key
-    use 'folke/which-key.nvim'
+	-- Which Key
+	use 'folke/which-key.nvim'
 
 	-- Colorscheme
 	use 'Mofiqul/vscode.nvim'
@@ -31,44 +31,44 @@ return require('packer').startup(function(use)
 	-- Treesitter
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
-    -- nvim-tree
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional
-        }
-    }
+	-- nvim-tree
+	use {
+		'nvim-tree/nvim-tree.lua',
+		requires = {
+			'nvim-tree/nvim-web-devicons', -- optional
+		}
+	}
 
-    -- Toggleterm
-    use {
-        'akinsho/toggleterm.nvim',
-        tag = '*',
-    }
+	-- Toggleterm
+	use {
+		'akinsho/toggleterm.nvim',
+		tag = '*',
+	}
 
 	-- Undotree
 	use 'mbbill/undotree'
 
-    -- Auto Pairs
-    use 'jiangmiao/auto-pairs'
+	-- Auto Pairs
+	use 'jiangmiao/auto-pairs'
 
-    -- Lualine
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = {
-            'nvim-tree/nvim-web-devicons',
-            opt = true
-        }
-    }
+	-- Lualine
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = {
+			'nvim-tree/nvim-web-devicons',
+			opt = true
+		}
+	}
 
-    -- Bufferline
-    use {
-        'akinsho/bufferline.nvim',
-        tag = "*",
-        requires = 'nvim-tree/nvim-web-devicons',
-    }
+	-- Bufferline
+	use {
+		'akinsho/bufferline.nvim',
+		tag = "*",
+		requires = 'nvim-tree/nvim-web-devicons',
+	}
 
-    -- Vista
-    use 'liuchengxu/vista.vim'
+	-- Vista
+	use 'liuchengxu/vista.vim'
 
 	-- LSP Zero
 	use {
@@ -94,36 +94,36 @@ return require('packer').startup(function(use)
 		}
 	}
 
-    -- DAP
-    use {
-        "jay-babu/mason-nvim-dap.nvim",
-        requires = {
-            "williamboman/mason.nvim",
-            "mfussenegger/nvim-dap",
-        }
-    }
-    use {
-        "rcarriga/nvim-dap-ui",
-        requires = {
-            "mfussenegger/nvim-dap",
-        }
-    }
+	-- DAP
+	use {
+		"jay-babu/mason-nvim-dap.nvim",
+		requires = {
+			"williamboman/mason.nvim",
+			"mfussenegger/nvim-dap",
+		}
+	}
+	use {
+		"rcarriga/nvim-dap-ui",
+		requires = {
+			"mfussenegger/nvim-dap",
+		}
+	}
 
-    -- Touble
-    use {
-        "folke/trouble.nvim",
-        requires = "nvim-tree/nvim-web-devicons",
-    }
+	-- Trouble
+	use {
+		"folke/trouble.nvim",
+		requires = "nvim-tree/nvim-web-devicons",
+	}
 
-    -- Codeium
-    use 'Exafunction/codeium.vim'
+	-- Codeium
+	use 'Exafunction/codeium.vim'
 
-    -- Dashboard
-    use {
-        'glepnir/dashboard-nvim',
-        requires = {
-            'nvim-tree/nvim-web-devicons',
-        }
-    }
+	-- Dashboard
+	use {
+		'glepnir/dashboard-nvim',
+		requires = {
+			'nvim-tree/nvim-web-devicons',
+		}
+	}
 
 end)

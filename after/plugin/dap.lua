@@ -1,25 +1,25 @@
 require('mason-nvim-dap').setup {
-    ensure_installed = {
-        'codelldb',
-        'cpptools'
-    },
-    automatic_installation = true,
+	ensure_installed = {
+		'codelldb',
+		'cpptools'
+	},
+	automatic_installation = true,
 }
 
 local dap = require('dap')
 dap.adapters.cppdbg = {
-    id = 'cppdbg',
-    type = 'executable',
-    command = '/home/malcret/.local/share/nvim/mason/packages/cpptools/extension/debugAdapters/bin/OpenDebugAD7'
+	id = 'cppdbg',
+	type = 'executable',
+	command = '/home/malcret/.local/share/nvim/mason/packages/cpptools/extension/debugAdapters/bin/OpenDebugAD7'
 }
 
 require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'c', 'cpp' } })
 
 local dapcontinue = function()
-    if vim.fn.filereadable('.vscode/launch.json') then
-        require('dap.ext.vscode').load_launchjs()
-    end
-    dap.continue()
+	if vim.fn.filereadable('.vscode/launch.json') then
+		require('dap.ext.vscode').load_launchjs()
+	end
+	dap.continue()
 end
 
 vim.keymap.set('n', '<leader>dc', function() dapcontinue() end)

@@ -6,11 +6,11 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 
 local fb_actions = require('telescope._extensions.file_browser.actions')
 require("telescope").setup {
-    pickers = {
-        find_files = {
-            hidden = true
-        },
-    },
+    --pickers = {
+    --    find_files = {
+    --        hidden = true
+    --    },
+    --},
     extensions = {
         file_browser = {
             -- path
@@ -22,7 +22,7 @@ require("telescope").setup {
             depth = 1,
             auto_depth = false,
             select_buffer = false,
-            hidden = { file_browser = true, folder_browser = true },
+            --hidden = { file_browser = false, folder_browser = false },
             -- respect_gitignore
             -- browse_files
             -- browse_folders

@@ -12,7 +12,7 @@ lsp.ensure_installed({
 	'bashls',
 	'rust_analyzer',
 	'asm_lsp',
-    'clangd',
+	'clangd',
 })
 
 local cmp = require('cmp')
@@ -44,3 +44,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+vim.api.nvim_create_autocmd({ "CursorHold" }, {
+	callback = function() vim.cmd("silent lua vim.lsp.buf.hover()") end,
+})

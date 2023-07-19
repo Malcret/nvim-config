@@ -9,7 +9,7 @@ require('vscode').setup({
     -- style = 'light'
 
     -- Enable transparent background
-    transparent = true,
+    transparent = false,
 
     -- Enable italic comment
     italic_comments = true,
@@ -19,14 +19,17 @@ require('vscode').setup({
 
     -- Override colors (see ./lua/vscode/colors.lua)
     color_overrides = {
-        vscLineNumber = '#FFFFFF',
+		vscBack = '#181818',
+		vscLineNumber = '#6e7681',
     },
 
     -- Override highlight groups (see ./lua/vscode/theme.lua)
     group_overrides = {
         -- this supports the same val table as vim.api.nvim_set_hl
         -- use colors from this colorscheme by requiring vscode.colors!
-        Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
+		--SpecialKey = { fg=c.vscDarkBlue }
     }
 })
 require('vscode').load()
+
+--vim.api.nvim_set_hl(0, "SpecialKey", { ctermfg=Red,  ctermbg=Blue })
