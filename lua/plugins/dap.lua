@@ -3,7 +3,12 @@ return {
     'mfussenegger/nvim-dap',
     dependencies = {
         -- Debugger UI
-        'rcarriga/nvim-dap-ui',
+        {
+            'rcarriga/nvim-dap-ui',
+            dependencies = {
+                'nvim-neotest/nvim-nio',
+            },
+        },
 
         -- Automaticly install debug adapters
         'williamboman/mason.nvim',
@@ -51,8 +56,8 @@ return {
                     step_over = '',
                     step_out = '',
                     step_back = '',
-                    run_last = '',
-                    terminate = '',
+                    run_last = '',
+                    terminate = '',
                     disconnect = '',
                 },
             },
