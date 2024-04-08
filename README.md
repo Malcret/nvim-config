@@ -23,6 +23,8 @@ I hope I succeeded...
 - a [Nerd Font](https://www.nerdfonts.com/) (for nice icons)
 - a C compiler (to build stuff)
 - Make (also to build stuff)
+- Cargo (for some LSP)
+- npm (for some LSP)
 
 ## 📦 Installation
 Just clone the repo in your empty Neovim config directory.
