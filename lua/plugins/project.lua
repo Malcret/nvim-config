@@ -10,6 +10,6 @@ return {
         require('telescope').load_extension('projects')
     end,
     keys = {
-        { '<leader>fp', '<Cmd>Telescope projects<CR>', desc = '[F]ind [P]rojects' }
+        { '<leader>sp', '<Cmd>Telescope projects<CR>', desc = '[s]earch [p]rojects' }
     }
 }

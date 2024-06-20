@@ -67,14 +67,14 @@ return {
         vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
 
         local tsbi = require 'telescope.builtin'
-        vim.keymap.set('n', '<leader>?', tsbi.oldfiles, { desc = '[?] Find recently opened files' })
-        vim.keymap.set('n', '<leader><space>', tsbi.buffers, { desc = '[ ] Find existing buffers' })
+        vim.keymap.set('n', '<leader>?', tsbi.oldfiles, { desc = '[?] find recent files' })
+        vim.keymap.set('n', '<leader>s<space>', tsbi.buffers, { desc = '[ ] find buffers' })
         vim.keymap.set('n', '<leader>/', function()
             tsbi.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
                 winbled = 10,
                 previewer = false,
             }))
-        end, { desc = '[/] Fuzzily search in current buffer' })
+        end, { desc = '[/] fuzzy search in current buffer' })
 
         local function telescope_live_grep_open_files()
             tsbi.live_grep({
@@ -82,19 +82,19 @@ return {
                 prompt_title = 'Live Grep in Open Files',
             })
         end
-        vim.keymap.set('n', '<leader>s/', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
-        vim.keymap.set('n', '<leader>ss', tsbi.builtin, { desc = '[S]earch [S]elect Telescope' })
-        vim.keymap.set('n', '<leader>gf', tsbi.git_files, { desc = 'Search [G]it [F]iles' })
-        vim.keymap.set('n', '<leader>sf', tsbi.find_files, { desc = '[S]earch [F]iles' })
-        vim.keymap.set('n', '<leader>sh', tsbi.help_tags, { desc = '[S]earch [H]elp' })
-        vim.keymap.set('n', '<leader>sw', tsbi.grep_string, { desc = '[S]earch current [W]ord' })
-        vim.keymap.set('n', '<leader>sg', tsbi.live_grep, { desc = '[S]earch by [G]rep' })
-        vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
-        vim.keymap.set('n', '<leader>sd', tsbi.diagnostics, { desc = '[S]earch [D]iagnostics' })
-        vim.keymap.set('n', '<leader>sr', tsbi.resume, { desc = '[S]earch [R]esume' })
+        vim.keymap.set('n', '<leader>s/', telescope_live_grep_open_files, { desc = '[s]earch [/] in open files' })
+        vim.keymap.set('n', '<leader>ss', tsbi.builtin, { desc = '[s]earch [s]elect telescope' })
+        -- vim.keymap.set('n', '<leader>gf', tsbi.git_files, { desc = 'Search [G]it [F]iles' })
+        vim.keymap.set('n', '<leader>sf', tsbi.find_files, { desc = '[s]earch [f]iles' })
+        vim.keymap.set('n', '<leader>sh', tsbi.help_tags, { desc = '[s]earch [h]elp' })
+        vim.keymap.set('n', '<leader>sw', tsbi.grep_string, { desc = '[s]earch current [w]ord' })
+        vim.keymap.set('n', '<leader>sg', tsbi.live_grep, { desc = '[s]earch by [g]rep' })
+        -- vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
+        vim.keymap.set('n', '<leader>sd', tsbi.diagnostics, { desc = '[s]earch [d]iagnostics' })
+        vim.keymap.set('n', '<leader>sr', tsbi.resume, { desc = '[s]earch [r]esume' })
 
         require("telescope").load_extension("file_browser")
-        vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>', { desc = '[F]ile [B]rowser' })
-        vim.keymap.set('n', '<leader>fB', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { desc = '[F]ile [B]rowser from current buffer' })
+        vim.keymap.set('n', '<leader>bf', ':Telescope file_browser<CR>', { desc = '[b]rowse [f]iles' })
+        vim.keymap.set('n', '<leader>bF', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { desc = '[b]rowse [F]iles from current buffer' })
     end
 }

@@ -30,7 +30,7 @@ vim.o.hlsearch = false
 vim.o.mouse = 'a'
 
 -- Sync clipboard with OS
-vim.o.clipboard = 'unnamedplus'
+-- vim.o.clipboard = 'unnamedplus'
 
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true

@@ -37,14 +37,18 @@ return {
             dap.continue()
         end
 
-        vim.keymap.set('n', '<leader>dc', continue, { desc = 'Debug: Start/Continue' })
-        vim.keymap.set('n', '<leader>di', dap.step_into, { desc = 'Debub: Step Into' })
-        vim.keymap.set('n', '<leader>do', dap.step_over, { desc = 'Debub: Step Over' })
-        vim.keymap.set('n', '<leader>dO', dap.step_out, { desc = 'Debub: Step Out' })
-        vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = 'Debub: Toggle Breakpoint' })
+        require('which-key').register({
+            ['<leader>d'] = { name = '[d]ap', _ = 'which_key_ignore' },
+        })
+
+        vim.keymap.set('n', '<leader>dc', continue, { desc = '[d]ebug start/[c]ontinue' })
+        vim.keymap.set('n', '<leader>di', dap.step_into, { desc = '[d]ebug step [i]nto' })
+        vim.keymap.set('n', '<leader>do', dap.step_over, { desc = '[d]ebug step [o]ver' })
+        vim.keymap.set('n', '<leader>dO', dap.step_out, { desc = '[d]ebug step [O]ut' })
+        vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = '[d]ebug toggle [b]reakpoint' })
         vim.keymap.set('n', '<leader>dB', function()
             dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-        end, { desc = 'Debug: Set Breakpoint' })
+        end, { desc = '[d]ebug set [B]reakpoint' })
 
         dapui.setup({
             icons = { expanded = '', collapsed = '', current_frame = '' },

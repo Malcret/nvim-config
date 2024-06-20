@@ -16,20 +16,17 @@ return {
                 [[ ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝]],
                 [[]],
             },
-            packages = {
-                enable = false
-            },
             shortcut = {
                 {
                     icon = ' ',
                     desc = 'Update',
-                    action = 'Lazy update',
+                    action = 'Lazy update | MasonUpdate',
                     key = 'u'
                 },
                 {
                     icon = ' ',
                     desc = 'Files',
-                    action = 'Telescope find_files cwd=',
+                    action = 'Telescope find_files',
                     key = 'f',
                 },
                 {
@@ -39,17 +36,29 @@ return {
                     key = 'p'
                 },
                 {
+                    icon = '󰥨 ',
+                    desc = 'Browse',
+                    action = 'Telescope file_browser',
+                    key = 'b',
+                },
+                {
                     icon = ' ',
                     desc = 'Config',
-                    action = 'e ' .. vim.fn.stdpath('config') .. ' | cd ' .. vim.fn.stdpath('config'),
+                    action = 'lua require(\'telescope.builtin\').find_files({ cwd = vim.fn.stdpath(\'config\') })',
                     key = 'c'
-                }
+                },
+            },
+            packages = {
+                enable = true
             },
             project = {
                 enable = true,
+                limit = 4,
+            },
+            mru = {
                 limit = 8,
             },
-            footer = {}
+            -- footer = {}
         },
     },
     config = function(_, opts)
@@ -61,7 +70,7 @@ return {
                 local merge_unique = function(t1, t2)
                     local result = {}
                     local seen_values = {}
-                    for _, value in ipairs(vim.tbl_flatten({ t1, t2 })) do
+                    for _, value in ipairs(vim.iter({ t1, t2 }):flatten():totable()) do
                         if not seen_values[value] then
                             seen_values[value] = true
                             table.insert(result, value)

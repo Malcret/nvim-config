@@ -26,13 +26,17 @@ return {
             }):find()
         end
 
-        vim.keymap.set("n", "<leader>ho", function() toggle_telescope(harpoon:list()) end,
-            { desc = "[H]arpoon [O]pen" })
+        require('which-key').register({
+            ['<leader>h'] = { name = '[h]arpoon', _ = 'which_key_ignore' },
+        })
+
+        vim.keymap.set("n", "<leader>th", function() toggle_telescope(harpoon:list()) end,
+            { desc = "[t]oggle [h]arpoon" })
         vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end,
-            { desc = "[H]arpoon [A]dd" })
+            { desc = "[h]arpoon [a]dd" })
         vim.keymap.set("n", "<leader>hp", function() harpoon:list():prev() end,
-            { desc = "[H]arpoon [P]revious buffer" })
+            { desc = "[h]arpoon [p]revious buffer" })
         vim.keymap.set("n", "<leader>hn", function() harpoon:list():next() end,
-            { desc = "[H]arpoon [N]ext buffer" })
+            { desc = "[h]arpoon [n]ext buffer" })
     end
 }
