@@ -25,9 +25,9 @@ return {
         },
         extensions = {
             file_browser = {
-                hijack_netrw = true
-            }
-        }
+                hijack_netrw = false,
+            },
+        },
     },
     config = function(_, opts)
         require('telescope').setup(opts)

@@ -16,5 +16,6 @@ vim.keymap.set('n', '<leader>wK', ':wincmd K<CR>', { desc = 'Move to up [w]indow
 vim.keymap.set('n', '<leader>wL', ':wincmd L<CR>', { desc = 'Move to right [w]indow [L]' })
 
 -- Buffers
-vim.keymap.set('n', '<leader><space>n', ':bn', { desc = '[ ] buffer [n]ext' })
-vim.keymap.set('n', '<leader><space>p', ':bp', { desc = '[ ] buffer [p]ext' })
+vim.keymap.set('n', '<leader><space>n', ':bn<CR>', { desc = '[ ] buffer [n]ext' })
+vim.keymap.set('n', '<leader><space>p', ':bp<CR>', { desc = '[ ] buffer [p]ext' })
+vim.keymap.set('n', '<leader><space>k', ':bd<CR>', { desc = '[ ] buffer [k]ill' })
