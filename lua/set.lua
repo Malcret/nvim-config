@@ -25,10 +25,16 @@ vim.o.breakindent = true
 vim.g.man_hardwrap = 0
 
 -- Highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
+
+-- Don't show mode
+vim.o.showmode = false
+
+-- Save undo history
+vim.o.undofile = true
 
 -- Sync clipboard with OS
 -- vim.o.clipboard = 'unnamedplus'
@@ -39,3 +45,6 @@ vim.o.smartcase = true
 
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
+
+-- Show cursor line
+vim.o.cursorline = true

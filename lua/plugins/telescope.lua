@@ -12,7 +12,6 @@ return {
                 return vim.fn.executable('make') == 1
             end,
         },
-        'nvim-telescope/telescope-file-browser.nvim'
     },
     opts = {
         defaults = {
@@ -21,11 +20,6 @@ return {
                     ['<C-u>'] = false,
                     ['<C-d>'] = false,
                 },
-            },
-        },
-        extensions = {
-            file_browser = {
-                hijack_netrw = false,
             },
         },
     },
@@ -92,9 +86,5 @@ return {
         -- vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
         vim.keymap.set('n', '<leader>sd', tsbi.diagnostics, { desc = '[s]earch [d]iagnostics' })
         vim.keymap.set('n', '<leader>sr', tsbi.resume, { desc = '[s]earch [r]esume' })
-
-        require("telescope").load_extension("file_browser")
-        vim.keymap.set('n', '<leader>bf', ':Telescope file_browser<CR>', { desc = '[b]rowse [f]iles' })
-        vim.keymap.set('n', '<leader>bF', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { desc = '[b]rowse [F]iles from current buffer' })
     end
 }
