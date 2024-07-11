@@ -10,7 +10,7 @@ return {
         { 'j-hui/fidget.nvim', opts = {} },
 
         -- Additional lua config
-        { 'folke/neodev.nvim', opts = {} },
+        { 'folke/lazydev.nvim', ft = "lua", opts = {} },
     },
     config = function()
         vim.api.nvim_create_autocmd('LspAttach', {
