@@ -22,6 +22,7 @@ vim.o.autoindent = true
 -- Wrap words
 vim.o.wrap = true
 vim.o.breakindent = true
+vim.g.man_hardwrap = 0
 
 -- Highlight on search
 vim.o.hlsearch = false
