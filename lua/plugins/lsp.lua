@@ -110,6 +110,7 @@ return {
                 },
             },
             rust_analyzer = {},
+            zls = {},
         }
 
         local ensure_installed = vim.tbl_keys(servers or {})
