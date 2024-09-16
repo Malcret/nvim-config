@@ -26,8 +26,8 @@ return {
             }):find()
         end
 
-        require('which-key').register({
-            ['<leader>h'] = { name = '[h]arpoon', _ = 'which_key_ignore' },
+        require('which-key').add({
+            { '<leader>h', group = '[h]arpoon' },
         })
 
         vim.keymap.set("n", "<leader>th", function() toggle_telescope(harpoon:list()) end,

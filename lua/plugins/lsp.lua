@@ -16,9 +16,12 @@ return {
         vim.api.nvim_create_autocmd('LspAttach', {
             group = vim.api.nvim_create_augroup('lsp_attach', { clear = true }),
             callback = function(event)
-                require('which-key').register({
-                    ['<leader>l'] = { name = '[l]sp', _ = 'which_key_ignore' },
-                })
+                -- require('which-key').register({
+                --     ['<leader>l'] = { name = '[l]sp', _ = 'which_key_ignore' },
+                -- })
+                require('which-key').add(
+                    { '<leader>l', desc = '[l]sp' }
+                )
 
                 local nmap = function(keys, func, desc)
                    vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc })

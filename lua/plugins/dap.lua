@@ -37,8 +37,8 @@ return {
             dap.continue()
         end
 
-        require('which-key').register({
-            ['<leader>d'] = { name = '[d]ap', _ = 'which_key_ignore' },
+        require('which-key').add({
+            { '<leader>d', group = '[d]ap' },
         })
 
         vim.keymap.set('n', '<leader>dc', continue, { desc = '[d]ebug start/[c]ontinue' })

@@ -22,8 +22,8 @@ return {
                     vim.keymap.set(mode, l, r, opts)
                 end
 
-                require('which-key').register({
-                    ['<leader>g'] = { name = '[g]it', _ = 'which_key_ignore' },
+                require('which-key').add({
+                    { '<leader>g', group = '[g]it' },
                 })
 
                 -- Navigation
