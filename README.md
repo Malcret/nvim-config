@@ -1,4 +1,6 @@
 # Neovim Config
+> [!WARNING]
+> Deprecated, use [nulVim](https://github.com/Malcret/nulVim) instead!
 
 Just my Neovim config, mainly used for dev.  
 The goal was to have something fast, small, ergonomic and with everything I need to code in a comfortable environment.  
